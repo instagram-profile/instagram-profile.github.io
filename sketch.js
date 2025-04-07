@@ -81,9 +81,15 @@ function mousePressed() {
 
 function touchStarted() {
   jumping = true;
+  // Required to "unlock" audio on mobile
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
+
   if (!backgroundClip.isPlaying()) {
-    backgroundClip.play()
+    backgroundClip.play();
     backgroundClip.loop()
+    
   }
   return false;
 }
