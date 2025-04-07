@@ -70,21 +70,17 @@ function draw() {
   jumping = false;
 }
 
-function handleMusic() {
+
+function mousePressed() {
+  jumping = true;
   if (!backgroundClip.isPlaying()) {
     backgroundClip.play()
     backgroundClip.loop()
   }
 }
 
-function mousePressed() {
-  jumping = true;
-  handleMusic()
-}
-
 function touchStarted() {
   jumping = true;
-  handleMusic()
   return false;
 }
 
