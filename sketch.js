@@ -82,6 +82,7 @@ function mousePressed() {
 function touchStarted() {
   jumping = true;
   if (!backgroundClip.isPlaying()) {
+    alert('playing')
     backgroundClip.play()
     backgroundClip.loop()
   }
