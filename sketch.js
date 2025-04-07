@@ -8,14 +8,14 @@ let backgroundClip, explosionClip;
 
 let jumping = false;
 function preload() {
-  gamefont = loadFont("assets/MotionControl-BoldItalic.otf")
-  airplaneImage = loadImage("assets/airplane.png")
-  enemyImage = loadImage("assets/enemy.png")
-  explosionImage = loadImage("assets/explosion.png");
-  towerImage = loadImage("assets/tower.png")
-  backgroundImage = loadImage("assets/background.png")
-  backgroundClip = loadSound("assets/background.mp3");
-  explosionClip = loadSound("assets/explosion.wav");
+  gamefont = loadFont("MotionControl-BoldItalic.otf")
+  airplaneImage = loadImage("airplane.png")
+  enemyImage = loadImage("enemy.png")
+  explosionImage = loadImage("explosion.png");
+  towerImage = loadImage("tower.png")
+  backgroundImage = loadImage("background.png")
+  backgroundClip = loadSound("background.mp3");
+  explosionClip = loadSound("explosion.wav");
 }
 
 function setup() {
