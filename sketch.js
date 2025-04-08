@@ -117,8 +117,8 @@ function restartDialog() {
   let btnW = 150;
   let btnH = 50;
   
-  let btnX = windowWidth / 2 - btnW / 2;
-  let btnY = windowHeight / 2 - btnH / 2;
+  let btnX = width / 2 - btnW / 2;
+  let btnY = height / 2 - btnH / 2;
 
   fill(255, 100, 100);
   stroke(0);
