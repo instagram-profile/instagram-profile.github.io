@@ -103,32 +103,41 @@ function updateScore() {
   text(`Score: ${score}`, width/2, 16);
 }
 
-let restartBtn;
-
 function restartDialog() {
   textFont(gamefont);
   textSize(32);
   stroke(2);
   fill(250, 70, 50);
   textAlign(CENTER, CENTER);
-  text("Game Over!", width / 2, 140);  
+  text("Game Over!", width / 2, 140);
+  
   fill(250, 150, 50);
   text(str(score), width / 2, 180);
 
-  if (!restartBtn) {
-    restartBtn = createButton("Restart");
-    restartBtn.position(width / 2 - 50, height / 2);
-    restartBtn.size(100, 40);
-    restartBtn.style("font-size", "18px");
-    restartBtn.mousePressed(restartGame);
-  }
-}
+  // Label-style restart button
+  let btnW = 150;
+  let btnH = 50;
+  
+  // Position centered in the *window*, not just canvas
+  let btnX = windowWidth / 2 - btnW / 2;
+  let btnY = windowHeight / 2 - btnH / 2;
 
-function restartGame() {
-  score = 0;
-  if (restartBtn) {
-    restartBtn.remove();
-    restartBtn = null;
+  fill(255, 100, 100);
+  stroke(0);
+  rect(btnX, btnY, btnW, btnH, 10); // rounded rect
+
+  fill(255);
+  noStroke();
+  textFont(gamefont);
+  textSize(24);
+  textAlign(CENTER, CENTER);
+  text("RESTART", btnX + btnW / 2, btnY + btnH / 2);
+
+  // Detect click
+  if (mouseIsPressed &&
+      mouseX > btnX && mouseX < btnX + btnW &&
+      mouseY > btnY && mouseY < btnY + btnH) {
+    restartGame();
   }
 }
 
