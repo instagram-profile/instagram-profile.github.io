@@ -114,17 +114,15 @@ function restartDialog() {
   fill(250, 150, 50);
   text(str(score), width / 2, 180);
 
-  // Label-style restart button
   let btnW = 150;
   let btnH = 50;
   
-  // Position centered in the *window*, not just canvas
   let btnX = windowWidth / 2 - btnW / 2;
   let btnY = windowHeight / 2 - btnH / 2;
 
   fill(255, 100, 100);
   stroke(0);
-  rect(btnX, btnY, btnW, btnH, 10); // rounded rect
+  rect(btnX, btnY, btnW, btnH, 10);
 
   fill(255);
   noStroke();
@@ -133,12 +131,9 @@ function restartDialog() {
   textAlign(CENTER, CENTER);
   text("RESTART", btnX + btnW / 2, btnY + btnH / 2);
 
-  // Detect click
-  if (mouseIsPressed &&
+  return (mouseIsPressed &&
       mouseX > btnX && mouseX < btnX + btnW &&
-      mouseY > btnY && mouseY < btnY + btnH) {
-    restartGame();
-  }
+      mouseY > btnY && mouseY < btnY + btnH);
 }
 
 
