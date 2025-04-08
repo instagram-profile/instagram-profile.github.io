@@ -103,17 +103,35 @@ function updateScore() {
   text(`Score: ${score}`, width/2, 16);
 }
 
+let restartBtn;
+
 function restartDialog() {
-  textFont(gamefont)
+  textFont(gamefont);
   textSize(32);
-  stroke(2)
+  stroke(2);
   fill(250, 70, 50);
   textAlign(CENTER, CENTER);
-  text("Game Over!", width / 2, 140);
+  text("Game Over!", width / 2, 140);  
   fill(250, 150, 50);
   text(str(score), width / 2, 180);
-  return keyIsPressed && (key === ' ');
+
+  if (!restartBtn) {
+    restartBtn = createButton("Restart");
+    restartBtn.position(width / 2 - 50, height / 2);
+    restartBtn.size(100, 40);
+    restartBtn.style("font-size", "18px");
+    restartBtn.mousePressed(restartGame);
+  }
 }
+
+function restartGame() {
+  score = 0;
+  if (restartBtn) {
+    restartBtn.remove();
+    restartBtn = null;
+  }
+}
+
 
 function rectsCollide(rect1, rect2) {
   return (
