@@ -113,27 +113,6 @@ function restartDialog() {
   
   fill(250, 150, 50);
   text(str(score), width / 2, 180);
-
-  let btnW = 150;
-  let btnH = 50;
-  
-  let btnX = width / 2 - btnW / 2;
-  let btnY = height / 2 - btnH / 2;
-
-  fill(255, 100, 100);
-  stroke(0);
-  rect(btnX, btnY, btnW, btnH, 10);
-
-  fill(255);
-  noStroke();
-  textFont(gamefont);
-  textSize(24);
-  textAlign(CENTER, CENTER);
-  text("RESTART", btnX + btnW / 2, btnY + btnH / 2);
-
-  return (mouseIsPressed &&
-      mouseX > btnX && mouseX < btnX + btnW &&
-      mouseY > btnY && mouseY < btnY + btnH);
 }
 
 
